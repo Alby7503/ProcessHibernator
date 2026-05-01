@@ -8,7 +8,7 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <ApplicationManifest>app.manifest</ApplicationManifest>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
-    <LangVersion>preview</LangVersion>
+    <LangVersion>latest</LangVersion>
     <PublishAot>true</PublishAot>
     <_SuppressWinFormsTrimError>true</_SuppressWinFormsTrimError>
     <SuppressTrimAnalysisWarnings>true</SuppressTrimAnalysisWarnings>

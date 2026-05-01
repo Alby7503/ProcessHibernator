@@ -38,6 +38,8 @@ namespace ProcessHibernator {
             TrayMenu = new ContextMenuStrip(components);
             MenuRestore = new ToolStripMenuItem();
             MenuQuit = new ToolStripMenuItem();
+            BtnGhostWake = new Button();
+            BtnKill = new Button();
             ((System.ComponentModel.ISupportInitialize)PicGraph).BeginInit();
             TrayMenu.SuspendLayout();
             SuspendLayout();
@@ -50,7 +52,7 @@ namespace ProcessHibernator {
             BtnHibernate.ForeColor = Color.White;
             BtnHibernate.Location = new Point(12, 342);
             BtnHibernate.Name = "BtnHibernate";
-            BtnHibernate.Size = new Size(380, 35);
+            BtnHibernate.Size = new Size(185, 35);
             BtnHibernate.TabIndex = 0;
             BtnHibernate.Text = "Hibernate Selected ↓";
             BtnHibernate.UseVisualStyleBackColor = false;
@@ -64,9 +66,9 @@ namespace ProcessHibernator {
             BtnWake.ForeColor = Color.White;
             BtnWake.Location = new Point(408, 342);
             BtnWake.Name = "BtnWake";
-            BtnWake.Size = new Size(380, 35);
+            BtnWake.Size = new Size(185, 35);
             BtnWake.TabIndex = 1;
-            BtnWake.Text = "Wake Selected ↑";
+            BtnWake.Text = "Wake Normal ↑";
             BtnWake.UseVisualStyleBackColor = false;
             BtnWake.Click += BtnWake_Click;
             // 
@@ -183,12 +185,42 @@ namespace ProcessHibernator {
             MenuQuit.Text = "Quit";
             MenuQuit.Click += MenuQuit_Click;
             // 
+            // BtnGhostWake
+            // 
+            BtnGhostWake.BackColor = Color.FromArgb(80, 40, 80);
+            BtnGhostWake.FlatAppearance.BorderSize = 0;
+            BtnGhostWake.FlatStyle = FlatStyle.Flat;
+            BtnGhostWake.ForeColor = Color.White;
+            BtnGhostWake.Location = new Point(603, 342);
+            BtnGhostWake.Name = "BtnGhostWake";
+            BtnGhostWake.Size = new Size(185, 35);
+            BtnGhostWake.TabIndex = 12;
+            BtnGhostWake.Text = "Wake Ghost (Sandbox) ↑";
+            BtnGhostWake.UseVisualStyleBackColor = false;
+            BtnGhostWake.Click += BtnGhostWake_Click;
+            // 
+            // BtnKill
+            // 
+            BtnKill.BackColor = Color.FromArgb(100, 30, 30);
+            BtnKill.FlatAppearance.BorderSize = 0;
+            BtnKill.FlatStyle = FlatStyle.Flat;
+            BtnKill.ForeColor = Color.White;
+            BtnKill.Location = new Point(207, 342);
+            BtnKill.Name = "BtnKill";
+            BtnKill.Size = new Size(185, 35);
+            BtnKill.TabIndex = 13;
+            BtnKill.Text = "Kill Process ✖";
+            BtnKill.UseVisualStyleBackColor = false;
+            BtnKill.Click += BtnKill_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(32, 32, 32);
             ClientSize = new Size(800, 552);
+            Controls.Add(BtnKill);
+            Controls.Add(BtnGhostWake);
             Controls.Add(label3);
             Controls.Add(PicGraph);
             Controls.Add(label2);
@@ -199,7 +231,7 @@ namespace ProcessHibernator {
             Controls.Add(BtnWake);
             Controls.Add(BtnHibernate);
             FormBorderStyle = FormBorderStyle.FixedSingle;
-            Icon = SystemIcons.Application; // Correct assignment
+            Icon = SystemIcons.Application;
             MaximizeBox = false;
             Name = "Form1";
             Text = "Process Hibernator";
@@ -226,5 +258,7 @@ namespace ProcessHibernator {
         private ContextMenuStrip TrayMenu;
         private ToolStripMenuItem MenuRestore;
         private ToolStripMenuItem MenuQuit;
+        private Button BtnGhostWake;
+        private Button BtnKill;
     }
 }
