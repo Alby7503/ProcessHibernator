@@ -1,5 +1,5 @@
 namespace ProcessHibernator {
-    partial class Form1 {
+    partial class MainForm {
         /// <summary>
         ///  Required designer variable.
         /// </summary>
@@ -145,7 +145,7 @@ namespace ProcessHibernator {
             // GraphTimer
             // 
             GraphTimer.Enabled = true;
-            GraphTimer.Interval = 1000;
+            GraphTimer.Interval = 200;
             GraphTimer.Tick += GraphTimer_Tick;
             // 
             // label3
@@ -213,7 +213,7 @@ namespace ProcessHibernator {
             BtnKill.UseVisualStyleBackColor = false;
             BtnKill.Click += BtnKill_Click;
             // 
-            // Form1
+            // MainForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -233,9 +233,9 @@ namespace ProcessHibernator {
             FormBorderStyle = FormBorderStyle.FixedSingle;
             Icon = SystemIcons.Application;
             MaximizeBox = false;
-            Name = "Form1";
+            Name = "MainForm";
             Text = "Process Hibernator";
-            Resize += Form1_Resize;
+            Resize += MainForm_Resize;
             ((System.ComponentModel.ISupportInitialize)PicGraph).EndInit();
             TrayMenu.ResumeLayout(false);
             ResumeLayout(false);

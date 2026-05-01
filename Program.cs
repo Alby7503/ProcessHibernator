@@ -1,3 +1,7 @@
+using System;
+using System.Threading;
+using System.Windows.Forms;
+
 namespace ProcessHibernator {
     internal static class Program {
         private static Mutex? _mutex;
@@ -7,18 +11,17 @@ namespace ProcessHibernator {
         /// </summary>
         [STAThread]
         static void Main() {
-            const string appName = "Global\\ProcessHibernator_SingleInstance_Mutex";
-            _mutex = new Mutex(true, appName, out bool createdNew);
-
+            // Ensure single instance
+            _mutex = new Mutex(true, "Global\\ProcessHibernator_SingleInstance", out bool createdNew);
             if (!createdNew) {
-                MessageBox.Show("Another instance of Process Hibernator is already running.", "Instance Already Running", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Process Hibernator is already running.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
 
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
-            Application.Run(new Form1());
+            Application.Run(new MainForm());
 
             // Keep the mutex alive until the app closes
             GC.KeepAlive(_mutex);
